@@ -28,7 +28,7 @@
 | :--------------: | :---------------------------: | :--------------: |
 | `ll isqrt(ll x)` | 返回 $\lfloor\sqrt{x}\rfloor$ | $\Theta(\log w)$ |
 ```cpp
-long long isqrt(long long x){long long a=x,b=(x+1)/2;while(a>b){a=b;b=(b+x/b)/2;}return a;}
+long long isqrt(long long x){long long a=1ll<<(__lg(x+1)/2+2),b=1ll<<(__lg(x+1)/2+1);while(a>b){a=b;b=(b+x/b)/2;}return a;}
 ```
 ## PR（分解质因数）
 |             函数名              |                      功能                      |              复杂性              |
