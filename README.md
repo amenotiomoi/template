@@ -111,7 +111,7 @@ long long isqrt(long long x){long long a=1ll<<(__lg(x+1)/2+2),b=1ll<<(__lg(x+1)/
 |          `path diam()`           |                          求树的直径                          |   $\Theta(n)$    |
 | `pair<int,int> gravity_center()` |         求树的重心（如果第二个不存在会用 $0$ 占位）          |   $\Theta(n)$    |
 
-[指针-前向星 实现（常数优秀，默认实现）](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E4%B8%8A%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88_vector.cpp)
+[指针-前向星 实现（常数优秀，默认实现）](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E4%B8%8A%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88_pointer.cpp)
 
 [vector 实现（常数较大）](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E4%B8%8A%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88_vector.cpp)
 
