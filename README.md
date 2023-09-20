@@ -136,6 +136,7 @@ long long isqrt(long long x){long long a=1ll<<(__lg(x+1)/2+2),b=1ll<<(__lg(x+1)/
 |  `void addedge(int u,int v)`   |      添加一条从 $u$ 到 $v$ 的边       | $\Theta(n)$ |
 |     `void init(int root)`      |       以 `root` 为根初始化哈希        | $\Theta(n)$ |
 |        `hvalue hash[i]`        | 求以 $i$ 为根的树哈希（只有根有标号） | $\Theta(1)$ |
+|        `hvalue merge(vector<hvalue> a)`        | 求出将 $a$ 内的所有树挂到新节点下方后的树哈希 | $\Theta(1)$ |
 |      `int tree[0].second`      |               树的大小                | $\Theta(1)$ |
 
 [code](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E5%93%88%E5%B8%8C.cpp)
