@@ -98,6 +98,20 @@ long long isqrt(long long x){long long a=1ll<<(__lg(x+1)/2+2),b=1ll<<(__lg(x+1)/
 请注意，你需要自定义 node 结构体和合并规则（为 `merge`），此模板 `tag` 和 `info` 都不依赖于合并规则的交换律（你可以用它解决 GSS1，或区间加，区间赋值）。
 
 [code](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%87%92%E6%A0%87%E8%AE%B0%E7%9A%84%E7%BA%BF%E6%AE%B5%E6%A0%91.cpp)
+
+## 可持久化 单点修改区间查询 线段树
+|          函数名           |                             功能                             |      复杂性      |
+| :-----------------------: | :----------------------------------------------------------: | :--------------: |
+|   `Psegment1(int n,node y)`    | 建立一个下标为 $1$ 到 $n$ 的树，叶子全为 $y$ |   $\Theta(n)$    |
+|   `Psegment1(vector<node> y)`    | 建立一个下标为 $1$ 到 $|y|-1$ 的树，叶子为 $y$，请注意，`y[0]` 会被抛弃 |   $\Theta(n)$    |
+|   `Psegment1()`  | 建立一棵空树，可以被赋值 |   $\Theta(1)$    |
+|  `node query(int l,int r)`   |   返回区间为 $[l,r]$ 的合并结果  | $\Theta(\log n)$ |
+| `Psegment1<node> change(int x,node y)` |    将位置为 $x$ 的值修改为 $y$，并将新树作为返回值，此操作不会改变原有的树  | $\Theta(\log n)$ |
+
+请注意，你需要自定义 node 结构体和合并规则（为 `node merge(node x,noe y)`），此模板不依赖于合并规则的交换律（你可以用它解决 GSS1）。**这个模板不会自动释放空间。**
+
+[code](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E7%BA%BF%E6%AE%B5%E6%A0%91.cpp)
+
 ## 最近公共祖先
 |              函数名              |                             功能                             |      复杂性      |
 | :------------------------------: | :----------------------------------------------------------: | :--------------: |
