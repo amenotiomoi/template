@@ -103,7 +103,7 @@ long long isqrt(long long x){long long a=1ll<<(__lg(x+1)/2+2),b=1ll<<(__lg(x+1)/
 |          函数名           |                             功能                             |      复杂性      |
 | :-----------------------: | :----------------------------------------------------------: | :--------------: |
 |   `Psegment1(int n,node y)`    | 建立一个下标为 $1$ 到 $n$ 的树，叶子全为 $y$ |   $\Theta(n)$    |
-|   `Psegment1(vector<node> y)`    | 建立一个下标为 $1$ 到 $|y|-1$ 的树，叶子为 $y$，请注意，`y[0]` 会被抛弃 |   $\Theta(n)$    |
+|   `Psegment1(vector<node> y)`    | 建立一个以 $y$ 为叶子的树，请注意，`y[0]` 会被抛弃 |   $\Theta(n)$    |
 |   `Psegment1()`  | 建立一棵空树，可以被赋值 |   $\Theta(1)$    |
 |  `node query(int l,int r)`   |   返回区间为 $[l,r]$ 的合并结果  | $\Theta(\log n)$ |
 | `Psegment1<node> change(int x,node y)` |    将位置为 $x$ 的值修改为 $y$，并将新树作为返回值，此操作不会改变原有的树  | $\Theta(\log n)$ |
