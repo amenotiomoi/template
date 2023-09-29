@@ -136,6 +136,7 @@ long long isqrt(long long x){long long a=1ll<<(__lg(x+1)/2+2),b=1ll<<(__lg(x+1)/
 | `setvalue(int x,node y)`  | 将节点编号为 $x$ 的值赋予 `node` $y$ |    $\Theta(1)$    |
 |       `init(int x)`       |       初始化树剖，以 $x$ 为根        | $O(n\log n)$ |
 | `node query(int l,int r)` |   返回从 $l$ 到 $r$ 路径上的合并值   | $O(\log n)$ （实际上和 $l$ 到 $r$ 路径上经过的重链数量呈线性关系，在一些特殊问题下可以被分析为 $\Theta(1)$） |
+| `lca_top[x]` | 查询 $x$ 所在链上的最高节点编号 | $\Theta(1)$ |
 
 此模板不依赖于合并规则的交换律（你可以用它解决 GSS1），同时它由 LCA 继承得到。
 
