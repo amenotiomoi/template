@@ -2,7 +2,7 @@
 ## 组合数
 |        函数名         |                        功能                         |          复杂性           |
 | :-------------------: | :-------------------------------------------------: | :-----------------------: |
-|    `init(ll mod)`     |  以 $\text{mod}$ 为模数初始化前 $10^6+10$ 个组合数  |        $\Theta(n)$        |
+|    `init(int n,ll mod)`     |  以 $\text{mod}$ 为模数初始化前 $n$ 个组合数  |        $\Theta(n)$        |
 | `init(int n,ll mod)`  |     以 $\text{mod}$ 为模数初始化前 $n$ 个组合数     |        $\Theta(n)$        |
 |    `ll Inv(int x)`    |          求 $\frac{1}{x}$ 在模意义下的结果          | $\Theta(\log \text{mod})$ |
 | `ll power(ll b,ll n)` |           求 $b^n$ 对 $\text{mod}$ 的余数           |     $\Theta(\log n)$      |
