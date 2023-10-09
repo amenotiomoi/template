@@ -112,64 +112,63 @@ this template is not based on the commutative law of merge function(in another w
 
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
-**this template will NOT release memory and it need $\Theta(\log n)$ more memory than the seg tree of the up three. You'd better make sure you know what you're doing before you use this.**
+**this template will NOT release memory and it need $\Theta(\log n)$ more memory than the seg tree of the up two. You'd better make sure you know what you're doing before you use this.**
 
 [code](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E7%BA%BF%E6%AE%B5%E6%A0%91.cpp)
 
-## 最近公共祖先
+## Lowest Common Ancestor
 |              function name              |                             feature                             |      复杂性      |
 | :------------------------------: | :----------------------------------------------------------: | :--------------: |
-|         `TreeLCA(int n)`         |                         初始化一颗树                         |   $\Theta(n)$    |
-|      `addedge(int u,int v)`      |                   建立一个 $u$ 到 $v$ 的边                   |   $\Theta(1)$    |
-|         `init(int Root)`         | 以 $\text{Root}$ 为根初始化所有内容（同时将父节点移到最后，重儿子移到最前） |   $\Theta(n)$    |
-|      `int lca(int u,int v)`      |                返回 $u$ 和 $v$ 的最近公共祖先                | $\Theta(\log n)$ |
-|      `int dis(int u,int v)`      |              返回 $u$ 到 $v$ 路径上经过边的数量              | $\Theta(\log n)$ |
-|      `int nxt(int u,int v)`      |    返回在 $u$ 到 $v$ 路径上，除了 $u$ 以外离 $u$ 最近的点    | $\Theta(\log n)$ |
-|   `path inter(path a,path b)`    |          求两个路径的交（若不交，则返回 `{-1,-1}`）          | $\Theta(\log n)$ |
-|          `path diam()`           |                          求树的直径                          |   $\Theta(n)$    |
-| `pair<int,int> gravity_center()` |         求树的重心（如果第二个不存在会用 $0$ 占位）          |   $\Theta(n)$    |
+|         `TreeLCA(int n)`         |                         rebuild a new tree, node from $1$ to $n$                         |   $\Theta(n)$    |
+|      `addedge(int u,int v)`      |                   add a edge $u↔v$                   |   $\Theta(1)$    |
+|         `init(int Root)`         |   initialize with $\text{Root}$  |   $\Theta(n)$    |
+|      `int lca(int u,int v)`      |                return the lowest common ancestor of $u$ and $v$                | $\Theta(\log n)$ |
+|      `int dis(int u,int v)`      |              return the edge number on path $u↔v$              | $\Theta(\log n)$ |
+|      `int nxt(int u,int v)`      |    return the shortest node to $u$ on the path $u↔v$ (except $u$)     | $\Theta(\log n)$ |
+|   `path inter(path a,path b)`    |          Find the intersection of two paths (if no, return `{-1,-1}`)          | $\Theta(\log n)$ |
+|          `path diam()`           |                          find the longest path on tree                          |   $\Theta(n)$    |
+| `pair<int,int> gravity_center()` |        find the gravity center of tree(if don't have two, the pair.second is `0`)          |   $\Theta(n)$    |
 
-[指针-前向星 实现（常数优秀，默认实现）](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E4%B8%8A%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88_pointer.cpp)
+[point implementation(faster)](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E4%B8%8A%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88_pointer.cpp)
 
-[vector 实现（常数较大）](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E4%B8%8A%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88_vector.cpp)
+[vector implementation(faster)](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E4%B8%8A%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88_vector.cpp)
 
-## 静态树剖（倍增）
+## static hld
 |          function name           |                 feature                 |      复杂性       |
 | :-----------------------: | :----------------------------------: | :---------------: |
-|   `hld<node,cat_tree>`    |  以猫树为基础建立一个 `node` 的树剖  |    $\Theta(n)$    |
-| `setvalue(int x,node y)`  | 将节点编号为 $x$ 的值赋予 `node` $y$ |    $\Theta(1)$    |
-|       `init(int x)`       |       初始化树剖，以 $x$ 为根        | $O(n\log n)$ |
-| `node query(int l,int r)` |   返回从 $l$ 到 $r$ 路径上的合并值   | $O(\log n)$ （实际上和 $l$ 到 $r$ 路径上经过的重链数量呈线性关系，在一些特殊问题下可以被分析为 $\Theta(1)$） |
-| `lca_top[x]` | 查询 $x$ 所在链上的最高节点编号 | $\Theta(1)$ |
+|   `hld<node,cat_tree>`    |  build a node hld based on `cat_tree`  |    $\Theta(n)$    |
+| `setvalue(int x,node y)`  | set the $x$ node of value $y$ |    $\Theta(1)$    |
+|       `init(int x)`       |       calculate the hld based on root $x$        | $O(n\log n)$ |
+| `node query(int l,int r)` |   query the value of path $u→v$  | $O(\log n)$ （In fact, it has a linear relationship with the number of heavy chains passed on the path from $l$ to $r$, and can be analyzed as $\Theta(1)$under some special problems） |
+| `lca_top[x]` | query the highest node index of the chain $x$ in it | $\Theta(1)$ |
 
-此模板不依赖于合并规则的交换律（你可以用它解决 GSS1），同时它由 LCA 继承得到。
+this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
 [code](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%9D%99%E6%80%81%E6%A0%91%E5%89%96.cpp)
 
-（目前仅支持点权和套猫树）
-## 树哈希
+## tree hash
 |             function name             |                 feature                  |   复杂性    |
 | :----------------------------: | :-----------------------------------: | :---------: |
-| `typedef pair<ull,ull> hvalue` |          双哈希值，可供比较           |      /      |
-|         `htree(int n)`         |         建立一个 $n$ 大小的树         | $\Theta(n)$ |
-|  `void addedge(int u,int v)`   |      添加一条从 $u$ 到 $v$ 的边       | $\Theta(n)$ |
-|     `void init(int root)`      |       以 `root` 为根初始化哈希        | $\Theta(n)$ |
-|        `hvalue hash[i]`        | 求以 $i$ 为根的树哈希（只有根有标号） | $\Theta(1)$ |
-|        `hvalue merge(vector<hvalue> a)`        | 求出将 $a$ 内的所有树挂到新节点下方后的树哈希 | $\Theta(1)$ |
-|      `int tree[0].second`      |               树的大小                | $\Theta(1)$ |
+| `typedef pair<ull,ull> hvalue` |          hash value, you can compare it          |      /      |
+|         `htree(int n)`         |         rebuild a new tree, node from $1$ to $n$         | $\Theta(n)$ |
+|  `void addedge(int u,int v)`   |      add a edge $u↔v$       | $\Theta(n)$ |
+|     `void init(int root)`      |       calculate hash value of root $\text{root}$        | $\Theta(n)$ |
+|        `hvalue hash[i]`        | find the hash value of the subtree with $i$ root | $\Theta(1)$ |
+|        `hvalue merge(vector<hvalue> a)`        | find the new tree hash value if all tree in $a$ merged on a new node | $\Theta(1)$ |
+|      `int tree[0].second`      |               size of tree                | $\Theta(1)$ |
 
 [code](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E5%93%88%E5%B8%8C.cpp)
 
-# 字符串
+# string
 
-## 字符串哈希
+## string hash
 |                 function name                 |                             feature                             |   复杂性    |
 | :------------------------------------: | :----------------------------------------------------------: | :---------: |
-|     `typedef pair<int,ll> hvalue`      |            `first` 表示长度，`second` 表示哈希值             |      /      |
-|          `hstring(string x)`           | 以 $x$ 处理一个字符串哈希（你可以直接将 `string` 替换为 `vector<int>` 而没有任何后果） | $\Theta(n)$ |
-|     `hvalue interval(int l,int r)`     |        以 `hvalue` 的形式返回 $x$ 中 $[l,r]$ 的字符串        | $\Theta(1)$ |
-| `hvalue operator +(hvalue a,hvalue b)` |                      连接两个 `hvalue`                       | $\Theta(1)$ |
-| `bool operator ==(hvalue a,hvalue b)`  |                  判断两个 `hvalue` 是否相同                  | $\Theta(1)$ |
+|     `typedef pair<int,ll> hvalue`      |           hash value, you can compare it             |      /      |
+|          `hstring(string x)`           | calculate the hash of $x$ (you can replace `string` to `vector<int>` without anything bad, but need every number smaller than $10^9$  | $\Theta(n)$ |
+|     `hvalue interval(int l,int r)`     |        return the value of $[l,r]$        | $\Theta(1)$ |
+| `hvalue operator +(hvalue a,hvalue b)` |                      return $a+b$                       | $\Theta(1)$ |
+| `bool operator ==(hvalue a,hvalue b)`  |                  return $a==b$                  | $\Theta(1)$ |
 
 [code](https://github.com/amenotiomoi/template/blob/main/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%93%88%E5%B8%8C.cpp)
 
@@ -177,3 +176,4 @@ this template is not based on the commutative law of merge function(in another w
 1. 懒标记的 zkw 线段树
 2. 树剖套线段树
 3. 网络流
+4. 线段树二分
