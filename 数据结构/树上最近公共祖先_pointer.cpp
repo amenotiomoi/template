@@ -1,4 +1,5 @@
 // 对于每一个树都需要在添加恰好 n-1 个边后进行 init，再进行析构，否则是 UB（例如，只在主函数内定义一个 TreeLCA 后立刻结束，是 UB）
+// For each tree, it needs to be init after adding exactly n-1 edges, then destruct, otherwise UB (for example, it ends immediately after defining only a TreeLCA in the main function, is UB).
 class TreeLCA {
    public:
       int*cnt;pair<int,int>*edge;
