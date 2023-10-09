@@ -102,7 +102,7 @@ this template is not based on the commutative law of merge function(in another w
 [code](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%87%92%E6%A0%87%E8%AE%B0%E7%9A%84%E7%BA%BF%E6%AE%B5%E6%A0%91.cpp)
 
 ## segment tree(single point change, interval query, persistence)
-|          function name           |                             feature                             |      复杂性      |
+|          function name           |                             feature                             |      Complexity      |
 | :-----------------------: | :----------------------------------------------------------: | :--------------: |
 |   `Psegment1(int n,node y)`    | rebuild a new tree, node from $1$ to $n$, with all $y$ |   $\Theta(n)$    |
 |   `Psegment1(vector<node> y)`    | build a tree on $y$, `y[0]` not considered |   $\Theta(n)$    |
@@ -117,7 +117,7 @@ this template is not based on the commutative law of merge function(in another w
 [code](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E7%BA%BF%E6%AE%B5%E6%A0%91.cpp)
 
 ## Lowest Common Ancestor
-|              function name              |                             feature                             |      复杂性      |
+|              function name              |                             feature                             |      Complexity      |
 | :------------------------------: | :----------------------------------------------------------: | :--------------: |
 |         `TreeLCA(int n)`         |                         rebuild a new tree, node from $1$ to $n$                         |   $\Theta(n)$    |
 |      `addedge(int u,int v)`      |                   add a edge $u↔v$                   |   $\Theta(1)$    |
@@ -134,7 +134,7 @@ this template is not based on the commutative law of merge function(in another w
 [vector implementation(slower)](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E4%B8%8A%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88_vector.cpp)
 
 ## static hld
-|          function name           |                 feature                 |      复杂性       |
+|          function name           |                 feature                 |      Complexity       |
 | :-----------------------: | :----------------------------------: | :---------------: |
 |   `hld<node,cat_tree>`    |  build a node hld based on `cat_tree`  |    $\Theta(n)$    |
 | `setvalue(int x,node y)`  | set the $x$ node of value $y$ |    $\Theta(1)$    |
@@ -147,7 +147,7 @@ this template is not based on the commutative law of merge function(in another w
 [code](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%9D%99%E6%80%81%E6%A0%91%E5%89%96.cpp)
 
 ## tree hash
-|             function name             |                 feature                  |   复杂性    |
+|             function name             |                 feature                  |   Complexity    |
 | :----------------------------: | :-----------------------------------: | :---------: |
 | `typedef pair<ull,ull> hvalue` |          hash value, you can compare it          |      /      |
 |         `htree(int n)`         |         rebuild a new tree, node from $1$ to $n$         | $\Theta(n)$ |
@@ -162,7 +162,7 @@ this template is not based on the commutative law of merge function(in another w
 # string
 
 ## string hash
-|                 function name                 |                             feature                             |   复杂性    |
+|                 function name                 |                             feature                             |   Complexity    |
 | :------------------------------------: | :----------------------------------------------------------: | :---------: |
 |     `typedef pair<int,ll> hvalue`      |           hash value, you can compare it             |      /      |
 |          `hstring(string x)`           | calculate the hash of $x$ (you can replace `string` to `vector<int>` without anything bad, but need every number smaller than $10^9$  | $\Theta(n)$ |
