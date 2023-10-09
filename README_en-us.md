@@ -139,7 +139,7 @@ this template is not based on the commutative law of merge function(in another w
 |   `hld<node,cat_tree>`    |  build a node hld based on `cat_tree`  |    $\Theta(n)$    |
 | `setvalue(int x,node y)`  | set the $x$ node of value $y$ |    $\Theta(1)$    |
 |       `init(int x)`       |       calculate the hld based on root $x$        | $O(n\log n)$ |
-| `node query(int l,int r)` |   query the value of path $u→v$  | $O(\log n)$ （In fact, it has a linear relationship with the number of heavy chains passed on the path from $l$ to $r$, and can be analyzed as $\Theta(1)$under some special problems） |
+| `node query(int l,int r)` |   query the value of path $u→v$  | $O(\log n)$ （In fact, it has a linear relationship with the number of heavy chains passed on the path from $l$ to $r$, and can be analyzed as $\Theta(1)$ under some special problems） |
 | `lca_top[x]` | query the highest node index of the chain $x$ in it | $\Theta(1)$ |
 
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
