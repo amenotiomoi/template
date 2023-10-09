@@ -26,7 +26,7 @@
 ## integer square root
 |      function name      |             feature              |      complexity      |
 | :--------------: | :---------------------------: | :--------------: |
-| `ll isqrt(ll x)` | return $\lfloor\sqrt{x}\rfloor$ | $\Theta(\log w)$ |
+| `ll isqrt(ll x)` | return $\lfloor\sqrt{x}\rfloor$ | $\Theta(\log \omega)$(around 6 if it's `ll`) |
 ```cpp
 ll isqrt(ll x){ll a=1ll<<(__lg(x+1)/2+2),b=1ll<<(__lg(x+1)/2+1);while(a>b){a=b;b=(b+x/b)/2;}return a;}
 ```
