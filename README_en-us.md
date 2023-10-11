@@ -9,7 +9,7 @@
 | `ll fac[int x]` | Calculate $x!$ (where $x \le n$) modulo `mod` | $\Theta(1)$           |
 | `ll inv[int x]` | Find the result of $\frac{1}{x}$ modulo | $\Theta(1)$           |
 
-[code](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E5%AD%A6/%E7%BB%84%E5%90%88%E6%95%B0.cpp)
+[code](https://github.com/amenotiomoi/template/blob/main/template/math_combi.cpp)
 
 ## Linear Sieve
 | Function Name | Feature | Complexity |
@@ -21,7 +21,7 @@
 | `vector<pair<int,int>> GetPrimeFac(int a)` | Decompose $a$ into prime factors and return them as pairs of $\text{prime}^\text{exponent}$ | $O(\log a)$ |
 | `vector<int> GetFacList(int a)` | Get all factors of $a$ | $\Theta(d(a))$ |
 
-[code](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E5%AD%A6/%E7%BA%BF%E6%80%A7%E7%AD%9B.cpp)
+[code](https://github.com/amenotiomoi/template/blob/main/template/math_factor.cpp)
 
 ## integer square root
 |      function name      |             feature              |      complexity      |
@@ -30,6 +30,7 @@
 ```cpp
 ll isqrt(ll x){ll a=1ll<<(__lg(x+1)/2+2),b=1ll<<(__lg(x+1)/2+1);while(a>b){a=b;b=(b+x/b)/2;}return a;}
 ```
+
 ## PR（prime fact）
 |             function name              |                      feature                      |              complexity              |
 | :-----------------------------: | :--------------------------------------------: | :------------------------------: |
@@ -37,14 +38,14 @@ ll isqrt(ll x){ll a=1ll<<(__lg(x+1)/2+2),b=1ll<<(__lg(x+1)/2+1);while(a>b){a=b;b
 |    `ll NonTrivialFact(ll x)`    | return any factor of $x$ (not consider $1$ and $x$), if not, return $-1$ | expect $\Theta(\sqrt[4]{x}\log x)$ |
 | `vector<ll> PrimeFacList(ll x)` |                 return prime factor list of $x$                 | expect $\Theta(\sqrt[4]{x}\log x)$ |
 
-[code](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E5%AD%A6/%E6%95%B4%E6%95%B0%E5%88%86%E8%A7%A3.cpp)
+[code](https://github.com/amenotiomoi/template/blob/main/template/math_pr.cpp)
 
 ## convolution
 |                     function name                     |                 feature                  |      complexity       |
 | :--------------------------------------------: | :-----------------------------------: | :---------------: |
 | `vector<int> mul(vector<int> a,vector<int> b)` | return the convolution of a and b(based on NTT, modulus=$998244353$) | $\Theta(n\log n)$ |
 
-[code](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E5%AD%A6/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E4%B9%98%E6%B3%95.cpp)
+[code](https://github.com/amenotiomoi/template/blob/main/template/math_ntt.cpp)
 
 # graph
 ## dijkstra
@@ -57,7 +58,7 @@ ll isqrt(ll x){ll a=1ll<<(__lg(x+1)/2+2),b=1ll<<(__lg(x+1)/2+1);while(a>b){a=b;b
 |             `ll get(int n)`              |    get the shortest path from $s$ to $t$, if there's no path, return $10^{18}$     |    $\Theta(1)$    |
 |         `vector<int>path(int n)`         | get all node from a possible sortest path from $s$ to $n$ (included $s$ and $n$) |    $O(n)$    |
 
-[code](https://github.com/amenotiomoi/template/blob/main/%E5%9B%BE%E8%AE%BA/%E6%97%A0%E8%B4%9F%E6%9D%83%E6%9C%80%E7%9F%AD%E8%B7%AF%EF%BC%88dijkstra%EF%BC%89.cpp)
+[code](https://github.com/amenotiomoi/template/blob/main/template/graph_dijkstra.cpp)
 
 ## SCC
 |              function name              |                             feature                             |   complexity    |
@@ -66,7 +67,7 @@ ll isqrt(ll x){ll a=1ll<<(__lg(x+1)/2+2),b=1ll<<(__lg(x+1)/2+1);while(a>b){a=b;b
 |      `addedge(int u,int v)`      |                 add a edge $u→v$                | $\Theta(1)$ |
 | `vector<vector<int>> kosaraju()` | get all SCC from graph（every `vector<int>` included a SCC's all node index） | $\Theta(n)$ |
 
-[code](https://github.com/amenotiomoi/template/blob/main/%E5%9B%BE%E8%AE%BA/%E5%BC%BA%E8%81%94%E9%80%9A%E5%88%86%E9%87%8F.cpp)
+[code](https://github.com/amenotiomoi/template/blob/main/template/graph_scc.cpp)
 # data struct
 ## cat tree（better sparse table）
 |          function name           |             feature              |      complexity       |
@@ -76,7 +77,7 @@ ll isqrt(ll x){ll a=1ll<<(__lg(x+1)/2+2),b=1ll<<(__lg(x+1)/2+1);while(a>b){a=b;b
 
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
-[code](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8C%AB%E6%A0%91%EF%BC%88%E9%9D%99%E6%80%81%E5%88%86%E6%B2%BB%EF%BC%89.cpp)
+[code](https://github.com/amenotiomoi/template/blob/main/template/ds_cattree.cpp)
 
 ## segment tree(single point change, interval query)
 |          function name           |                             feature                             |      complexity      |
@@ -87,9 +88,8 @@ this template is not based on the commutative law of merge function(in another w
 
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
-[zkw(faster, but need 0.5x more memory than compress seg)](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%AE%B5%E6%A0%91_zkw.cpp)
+[code](https://github.com/amenotiomoi/template/blob/main/template/ds_seg1.cpp)
 
-[compress seg(slower, use less memory)](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%AE%B5%E6%A0%91_smaller_memory.cpp)
 ## segment tree(interval change, interval query)
 |               function name                |                             feature                             |      complexity      |
 | :---------------------------------: | :----------------------------------------------------------: | :--------------: |
@@ -99,7 +99,7 @@ this template is not based on the commutative law of merge function(in another w
 
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
-[code](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%87%92%E6%A0%87%E8%AE%B0%E7%9A%84%E7%BA%BF%E6%AE%B5%E6%A0%91.cpp)
+[code](https://github.com/amenotiomoi/template/blob/main/template/ds_seg2.cpp)
 
 ## segment tree(single point change, interval query, persistence)
 |          function name           |                             feature                             |      Complexity      |
@@ -114,7 +114,7 @@ this template is not based on the commutative law of merge function(in another w
 
 **this template will NOT release memory and it need $\Theta(\log n)$ more memory than the seg tree of the up two. You'd better make sure you know what you're doing before you use this.**
 
-[code](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E7%BA%BF%E6%AE%B5%E6%A0%91.cpp)
+[code](https://github.com/amenotiomoi/template/blob/main/template/ds_pseg1.cpp)
 
 ## Lowest Common Ancestor
 |              function name              |                             feature                             |      Complexity      |
@@ -129,9 +129,7 @@ this template is not based on the commutative law of merge function(in another w
 |          `path diam()`           |                          find the longest path on tree                          |   $\Theta(n)$    |
 | `pair<int,int> gravity_center()` |        find the gravity center of tree(if don't have two, the pair.second is `0`)          |   $\Theta(n)$    |
 
-[point implementation(faster)](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E4%B8%8A%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88_pointer.cpp)
-
-[vector implementation(slower)](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E4%B8%8A%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88_vector.cpp)
+[code](https://github.com/amenotiomoi/template/blob/main/template/ds_lca.cpp)
 
 ## static hld
 |          function name           |                 feature                 |      Complexity       |
@@ -144,7 +142,7 @@ this template is not based on the commutative law of merge function(in another w
 
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
-[code](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%9D%99%E6%80%81%E6%A0%91%E5%89%96.cpp)
+[code](https://github.com/amenotiomoi/template/blob/main/template/ds_hld.cpp)
 
 ## tree hash
 |             function name             |                 feature                  |   Complexity    |
@@ -157,7 +155,7 @@ this template is not based on the commutative law of merge function(in another w
 |        `hvalue merge(vector<hvalue> a)`        | find the new tree hash value if all tree in $a$ merged on a new node | $\Theta(1)$ |
 |      `int tree[0].second`      |               size of tree                | $\Theta(1)$ |
 
-[code](https://github.com/amenotiomoi/template/blob/main/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E5%93%88%E5%B8%8C.cpp)
+[code](https://github.com/amenotiomoi/template/blob/main/template/ds_treehash.cpp)
 
 # string
 
@@ -170,7 +168,7 @@ this template is not based on the commutative law of merge function(in another w
 | `hvalue operator +(hvalue a,hvalue b)` |                      return $a+b$                       | $\Theta(1)$ |
 | `bool operator ==(hvalue a,hvalue b)`  |                  return $a==b$                  | $\Theta(1)$ |
 
-[code](https://github.com/amenotiomoi/template/blob/main/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%93%88%E5%B8%8C.cpp)
+[code](https://github.com/amenotiomoi/template/blob/main/template/string_hash.cpp)
 
 待办：
 1. 懒标记的 zkw 线段树
