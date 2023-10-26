@@ -110,7 +110,7 @@ arrays start with $1$.
 ## sequence splay(link, cut, single point change, interval query)
 |          function name           |                             feature                             |      complexity      |
 | :-----------------------: | :----------------------------------------------------------: | :--------------: |
-|   `splay(vector<node>&a)`    | rebuild a new tree, node from $1$ to $|a|$, with $a$ (`a[0]` in splay is index $1$) |   $\Theta(n)$    |
+|   `splay(vector<node>&a)`    | rebuild a new tree, node from $1$ to $\|a\|$, with $a$ (`a[0]` in splay is index $1$) |   $\Theta(n)$    |
 |  `change(int x,node y)`   |                 change the value on index $x$ to $y$                  | $\Theta(\log n)$ |
 | `node query(int l,int r)` |                return the value of interval $[l,r]$                 | $\Theta(\log n)$ |
 | `splay cut(int l,int r)` | cut the interval $[l,r]$ out and build a new splay on it(This interval will be deleted from the original splay) | $\Theta(\log n)$ | 
