@@ -179,13 +179,12 @@ this template is not based on the commutative law of merge function(in another w
 | :------------------------------------: | :----------------------------------------------------------: | :---------: |
 |     `typedef pair<int,ll> hvalue`      |           hash value, you can compare it             |      /      |
 |          `hstring(string x)`           | calculate the hash of $x$ (you can replace `string` to `vector<int>` without anything bad, but need every number smaller than $10^9$  | $\Theta(n)$ |
-|     `hvalue interval(int l,int r)`     |        return the value of $[l,r]$        | $\Theta(1)$ |
+|     `hvalue interval(int l,int r)`     |        return the value of $[l,r]$(based on $0$)        | $\Theta(1)$ |
 | `hvalue operator +(hvalue a,hvalue b)` |                      return $a+b$                       | $\Theta(1)$ |
 | `bool operator ==(hvalue a,hvalue b)`  |                  return $a==b$                  | $\Theta(1)$ |
 
 [code](https://github.com/amenotiomoi/template/blob/main/template/string_hash.cpp)
 
-arrays start with $0$. You can simply replace `string` with `vector<int>` to handle the int vector with $\le10^9$ number.
 
 待办：
 1. 懒标记的 zkw 线段树
