@@ -77,6 +77,8 @@ ll isqrt(ll x){ll a=1ll<<(__lg(x+1)/2+2),b=1ll<<(__lg(x+1)/2+1);while(a>b){a=b;b
 
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
+arrays start with $0$.
+
 [code](https://github.com/amenotiomoi/template/blob/main/template/ds_cattree.cpp)
 
 ## segment tree(single point change, interval query)
@@ -88,6 +90,8 @@ this template is not based on the commutative law of merge function(in another w
 
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
+arrays start with $1$.
+
 [code](https://github.com/amenotiomoi/template/blob/main/template/ds_seg1.cpp)
 
 ## segment tree(interval change, interval query)
@@ -98,6 +102,8 @@ this template is not based on the commutative law of merge function(in another w
 |   `node::info query(int l,int r)`   |                return the value of interval $[l,r]$                 | $\Theta(\log n)$ |
 
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
+
+arrays start with $1$.
 
 [code](https://github.com/amenotiomoi/template/blob/main/template/ds_seg2.cpp)
 
@@ -113,6 +119,8 @@ this template is not based on the commutative law of merge function(in another w
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
 **this template will NOT release memory and it need $\Theta(\log n)$ more memory than the seg tree of the up two. You'd better make sure you know what you're doing before you use this.**
+
+arrays start with $1$.
 
 [code](https://github.com/amenotiomoi/template/blob/main/template/ds_pseg1.cpp)
 
@@ -170,8 +178,11 @@ this template is not based on the commutative law of merge function(in another w
 
 [code](https://github.com/amenotiomoi/template/blob/main/template/string_hash.cpp)
 
+arrays start with $0$. You can simply replace `string` with `vector<int>` to handle the int vector with $\le10^9$ number.
+
 待办：
 1. 懒标记的 zkw 线段树
 2. 树剖套线段树
 3. 网络流
 4. 线段树二分
+5. Splay
