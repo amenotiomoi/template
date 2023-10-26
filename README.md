@@ -107,6 +107,21 @@ arrays start with $1$.
 
 [code](https://github.com/amenotiomoi/template/blob/main/template/ds_seg2.cpp)
 
+## sequence splay(link, cut, single point change, interval query)
+|          function name           |                             feature                             |      complexity      |
+| :-----------------------: | :----------------------------------------------------------: | :--------------: |
+|   `splay(vector<node>&a)`    | rebuild a new tree, node from $1$ to $|a|$, with $a$ (`a[0]` in splay is index $1$) |   $\Theta(n)$    |
+|  `change(int x,node y)`   |                 change the value on index $x$ to $y$                  | $\Theta(\log n)$ |
+| `node query(int l,int r)` |                return the value of interval $[l,r]$                 | $\Theta(\log n)$ |
+| `splay cut(int l,int r)` | cut the interval $[l,r]$ out and build a new splay on it(This interval will be deleted from the original splay) | $\Theta(\log n)$ | 
+| `insert(splay x,int p)` | insert the splay after the index $p$ (for example, if $p=0$, $x$ will be connected in begin, if $p=|s|$, $x$ will be connect on the end) | $\Theta(\log n)$ |
+
+this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
+
+arrays start with $1$.
+
+[code didn't finished]()
+
 ## segment tree(single point change, interval query, persistence)
 |          function name           |                             feature                             |      Complexity      |
 | :-----------------------: | :----------------------------------------------------------: | :--------------: |
