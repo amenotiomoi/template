@@ -72,7 +72,7 @@ ll isqrt(ll x){ll a=1ll<<(__lg(x+1)/2+2),b=1ll<<(__lg(x+1)/2+1);while(a>b){a=b;b
 ## cat tree（better sparse table）
 |          function name           |             feature              |      complexity       |
 | :-----------------------: | :---------------------------: | :---------------: |
-|  `init(vector<node> x)`   |       build a sparse table based on $x$  (`a[0]` in splay is index $0$)        | $\Theta(n\log n)$ |
+|  `init(vector<node> x)`   |       build a sparse table based on $x$  (`a[0]` in array is index $0$)        | $\Theta(n\log n)$ |
 | `node query(int l,int r)` | return the value of interval $[l,r]$ |    $\Theta(1)$    |
 
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
@@ -108,15 +108,11 @@ this template is not based on the commutative law of merge function(in another w
 |  `change(int x,node y)`   |                 change the value on index $x$ to $y$                  | $\Theta(\log n)$ |
 | `node query(int l,int r)` |                return the value of interval $[l,r]$                 | $\Theta(\log n)$ |
 | `splay cut(int l,int r)` | cut the interval $[l,r]$ out and build a new splay on it(This interval will be deleted from the original splay) | $\Theta(\log n)$ | 
-| `insert(splay x,int p)` | insert the splay after the index $p$ | $\Theta(\log n)$ |
-
-for example about insert function, if $p=0$, $x$ will be connected in begin, if $p=|s|$, $x$ will be connect on the end.
-
-**Creating an empty splay will cause UB**.
+| `insert(splay x,int p)` | insert the splay after the index $p$(for example about insert function, if $p=0$, $x$ will be connected in begin, if $p=\|s\|$, $x$ will be connect on the end.) | $\Theta(\log n)$ |
 
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
-[code didn't finished]()
+[code](https://github.com/amenotiomoi/template/blob/main/template/ds_splay1.cpp)
 
 ## segment tree(single point change, interval query, persistence)
 |          function name           |                             feature                             |      Complexity      |
