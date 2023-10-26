@@ -72,12 +72,10 @@ ll isqrt(ll x){ll a=1ll<<(__lg(x+1)/2+2),b=1ll<<(__lg(x+1)/2+1);while(a>b){a=b;b
 ## cat tree（better sparse table）
 |          function name           |             feature              |      complexity       |
 | :-----------------------: | :---------------------------: | :---------------: |
-|  `init(vector<node> x)`   |       build a sparse table based on $x$        | $\Theta(n\log n)$ |
+|  `init(vector<node> x)`   |       build a sparse table based on $x$  (`a[0]` in splay is index $0$)        | $\Theta(n\log n)$ |
 | `node query(int l,int r)` | return the value of interval $[l,r]$ |    $\Theta(1)$    |
 
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
-
-arrays start with $0$.
 
 [code](https://github.com/amenotiomoi/template/blob/main/template/ds_cattree.cpp)
 
@@ -90,8 +88,6 @@ arrays start with $0$.
 
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
-arrays start with $1$.
-
 [code](https://github.com/amenotiomoi/template/blob/main/template/ds_seg1.cpp)
 
 ## segment tree(interval change, interval query)
@@ -102,8 +98,6 @@ arrays start with $1$.
 |   `node::info query(int l,int r)`   |                return the value of interval $[l,r]$                 | $\Theta(\log n)$ |
 
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
-
-arrays start with $1$.
 
 [code](https://github.com/amenotiomoi/template/blob/main/template/ds_seg2.cpp)
 
@@ -120,8 +114,6 @@ for example about insert function, if $p=0$, $x$ will be connected in begin, if 
 
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
-arrays start with $1$.
-
 [code didn't finished]()
 
 ## segment tree(single point change, interval query, persistence)
@@ -136,8 +128,6 @@ arrays start with $1$.
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
 **this template will NOT release memory and it need $\Theta(\log n)$ more memory than the seg tree of the up two. You'd better make sure you know what you're doing before you use this.**
-
-arrays start with $1$.
 
 [code](https://github.com/amenotiomoi/template/blob/main/template/ds_pseg1.cpp)
 
