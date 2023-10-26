@@ -112,6 +112,8 @@ this template is not based on the commutative law of merge function(in another w
 
 for example about insert function, if $p=0$, $x$ will be connected in begin, if $p=|s|$, $x$ will be connect on the end.
 
+**Creating an empty splay will cause UB**.
+
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
 [code didn't finished]()
