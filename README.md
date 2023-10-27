@@ -88,7 +88,9 @@ this template is not based on the commutative law of merge function(in another w
 
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
-[code](https://github.com/amenotiomoi/template/blob/main/template/ds_seg1.cpp)
+[code1(memory*3, faster)](https://github.com/amenotiomoi/template/blob/main/template/ds_seg1.cpp)
+
+[code2(memory*2, slower)](https://github.com/amenotiomoi/template/blob/main/template/ds_seg1_vector.cpp)
 
 ## segment tree(interval change, interval query)
 |               function name                |                             feature                             |      complexity      |
