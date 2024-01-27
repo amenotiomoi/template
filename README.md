@@ -3,7 +3,7 @@
 | Function Name   | Feature                                          | Complexity            |
 | --------------- | ------------------------------------------------ | --------------------- |
 | `init(int n,ll mod)`  | Use $\text{mod}$ as the modulus, initialize first $n$ combinations | $\Theta(n)$           |
-| `ll Inv(int x)` | Find the result of $\frac{1}{x}$ modulo | $\Theta(\log \text{mod})$ |
+| `ll Inv(ll x)` | Find the result of $\frac{1}{x}$ modulo | $\Theta(\log \text{mod})$ |
 | `ll power(ll b,ll n)` | Calculate $b^n$ modulo `mod` | $\Theta(\log n)$      |
 | `ll C(ll x,ll y)` | Calculate $\text{C(x,y)}$ (where $x, y \le n$) modulo `mod` | $\Theta(1)$           |
 | `ll fac[int x]` | Calculate $x!$ (where $x \le n$) modulo `mod` | $\Theta(1)$           |
