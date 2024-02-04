@@ -187,6 +187,17 @@ this template is not based on the commutative law of merge function(in another w
 
 [code](https://github.com/amenotiomoi/template/blob/main/template/string_hash.cpp)
 
+# algorithms
+
+## 2D point count
+
+|                 function name                 |                             feature                             |   Complexity    |
+| :------------------------------------: | :----------------------------------------------------------: | :---------: |
+|     `vector<int> pointcount_offline(vector<pair<int,int>>point,vector<array<int,4>>query)`      |        For each query, return how many points satisfy `a[0]<=x<=a[1]&&a[2]<=y<=a[3]`                |    $\Theta(n\log n)$   |
+|     `pointcount_online::init(vector<pair<int,int>> point)`      |        Initialize a point set                |    $\Theta(n\log n)$   |
+|     `pointcount_online::query(int x1,int x2,int y1,int y2)`      |        count number of point which `x1<=x<=x2 && y1<=y<=y2`                |    $\Theta(\log n)$   |
+|     `pointcount_online::query(int x,int y)`      |        count number of point which `point.x<=x&&point.y<=y`                |    $\Theta(\log n)$ (Smaller constants, recommended)  |
+
 
 待办：
 1. 懒标记的 zkw 线段树
