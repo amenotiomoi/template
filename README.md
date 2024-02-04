@@ -44,6 +44,8 @@ ll isqrt(ll x){ll a=1ll<<(__lg(x+1)/2+2),b=1ll<<(__lg(x+1)/2+1);while(a>b){a=b;b
 |                     function name                     |                 feature                  |      complexity       |
 | :--------------------------------------------: | :-----------------------------------: | :---------------: |
 | `vector<int> mul(vector<int> a,vector<int> b)` | return the convolution of a and b(based on NTT, modulus=$998244353$) | $\Theta(n\log n)$ |
+| `vector<int> setadd(vector<int> a,vector<int> b)` | all possible values of a[i]+b[j] are sorted, uniqued in the result | $\Theta(n\log n), n=\max{a}+\max{b}-min{a}-min{b}$ |
+| `vector<int> setsub(vector<int> a,vector<int> b)` | all possible values of a[i]-b[j] are sorted, uniqued in the result | $\Theta(n\log n), n=\max{a}+\max{b}-min{a}-min{b}$ |
 
 [code](https://github.com/amenotiomoi/template/blob/main/template/math_ntt.cpp)
 
