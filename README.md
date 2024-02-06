@@ -198,10 +198,6 @@ this template is not based on the commutative law of merge function(in another w
 |     `pointcount_online::query(int x1,int x2,int y1,int y2)`      |        count number of point which `x1<=x<=x2 && y1<=y<=y2`                |    $\Theta(\log n)$   |
 |     `pointcount_online::query(int x,int y)`      |        count number of point which `point.x<=x&&point.y<=y`                |    $\Theta(\log n)$ (Smaller constants, recommended)  |
 
+[code](https://github.com/amenotiomoi/template/blob/main/template/algo_2dpoint.cpp)
 
-待办：
-1. 懒标记的 zkw 线段树
-2. 树剖套线段树
-3. 网络流
-4. 线段树二分
-5. Splay
+
