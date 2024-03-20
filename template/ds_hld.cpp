@@ -50,3 +50,31 @@ class hld<node,segment1> {
       hld(int n){tr=new TreeLCA(n);}
       ~hld(){delete ds[0];delete ds[1];delete tr;}
 };
+/*
+   hld<node,segment1> P(cnt),Q(cnt);
+   for(int i=2;i<=cnt;++i) {
+      P.addedge(i,fa[i]);
+      Q.addedge(i,fa[i]);
+   }
+   P.init(1);Q.init(1);
+   for(int i=1;i<=cnt;++i) {
+      P[i]={a[i],a[i],a[i],a[i]};
+      Q[i]={-a[i],-a[i],-a[i],-a[i]};
+   }
+   for(array<int,3> i:query) {
+      if(i[2]==0) {
+         cout << "YES" << endl;
+         continue;
+      }
+      if(i[2]>0&&P.query(i[0],i[1]).ans>=i[2]) {
+         cout << "YES" << endl;
+         continue;
+      }
+      if(i[2]<0&&Q.query(i[0],i[1]).ans>=-i[2]) {
+         cout << "YES" << endl;
+         continue;
+      }
+      cout << "NO" << endl;
+      // you can use function change of P and Q here also.
+   }
+*/
