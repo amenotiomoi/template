@@ -85,14 +85,12 @@ this template is not based on the commutative law of merge function(in another w
 |          function name           |                             feature                             |      complexity      |
 | :-----------------------: | :----------------------------------------------------------: | :--------------: |
 |   `init(int n,node y)`    | rebuild a new tree, node from $1$ to $n$, with all $y$ |   $\Theta(n)$    |
-|  `change(int x,node y)`   |                 change the value on index $x$ to $y$                  | $\Theta(\log n)$ |
+|  `segmentree[x]=y;`   |                 change the value on index $x$ to $y$                  | $\Theta(\log n)$ |
 | `node query(int l,int r)` |                return the value of interval $[l,r]$                 | $\Theta(\log n)$ |
 
 this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
 [code1(memory*3, faster)](https://github.com/amenotiomoi/template/blob/main/template/ds_seg1.cpp)
-
-[code2(memory*2, slower)](https://github.com/amenotiomoi/template/blob/main/template/ds_seg1_vector.cpp)
 
 ## segment tree(interval change, interval query)
 |               function name                |                             feature                             |      complexity      |
