@@ -1,10 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-template<typename node>
-class segment1 {
+template<typename node> class segment1 {
    private:
-      int l,z;
-      vector<node> t;
+      int l,z;vector<node> t;
       struct p{segment1& segTree;int d;p(segment1& st,int i):segTree(st),d(i){}operator node()const{return segTree.t[d];}p& operator=(const node& val){segTree.change(d,val);return *this;}};
       void change(int x,node y){x+=z;t[x]=y;for(int i=x/2;i;i/=2)t[i]=node::merge(t[i*2],t[i*2+1]);}
    public:
