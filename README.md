@@ -84,7 +84,7 @@ this template is not based on the commutative law of merge function(in another w
 ## segment tree(single point change, interval query)
 |          function name           |                             feature                             |      complexity      |
 | :-----------------------: | :----------------------------------------------------------: | :--------------: |
-|   `init(int n,node y)`    | rebuild a new tree, node from $1$ to $n$, with all $y$ |   $\Theta(n)$    |
+|   `init(int n)`    | rebuild a new tree, node from $1$ to $n$, empty node |   $\Theta(n)$    |
 |  `segmentree[x]=y;`   |                 change the value on index $x$ to $y$                  | $\Theta(\log n)$ |
 | `node query(int l,int r)` |                return the value of interval $[l,r]$                 | $\Theta(\log n)$ |
 
