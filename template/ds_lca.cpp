@@ -23,3 +23,11 @@ class TreeLCA {
       TreeLCA(int n){cnt=new int[n+1];edge=new pair<int,int>[n];tree=new pair<int*,int>[n+1];for(int i=0;i<=n;++i)cnt[i]=0;tree[0]={new int[n*2-1],0};}
       ~TreeLCA(){delete[]lca_hev;for(int**i:{&siz,&dep,&fa,&dfn,&lca_top})delete[]*i;}
 };
+/*
+TreeLCA *Q;
+Q=new TreeLCA(5);
+for(int i=1;i<5;++i) Q->addedge(u,v);
+Q->init(3);
+cout << Q->dis(Q->diam()) << endl;
+delete Q;
+*/
