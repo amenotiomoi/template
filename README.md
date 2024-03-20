@@ -71,13 +71,14 @@ ll isqrt(ll x){ll a=1ll<<(__lg(x+1)/2+2),b=1ll<<(__lg(x+1)/2+1);while(a>b){a=b;b
 
 [code](https://github.com/amenotiomoi/template/blob/main/template/graph_scc.cpp)
 # data struct
+
+In all `merge` function, it is not based on the law of exchange, For example, you can define a rule such that merge(a,b)≠merge(b,a) and the next data structure still works fine.
+
 ## cat tree（better sparse table）
 |          function name           |             feature              |      complexity       |
 | :-----------------------: | :---------------------------: | :---------------: |
 |  `init(vector<node> x)`   |       build a sparse table based on $x$  (`a[0]` in array is index $0$)        | $\Theta(n\log n)$ |
 | `node query(int l,int r)` | return the value of interval $[l,r]$ |    $\Theta(1)$    |
-
-this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
 [code](https://github.com/amenotiomoi/template/blob/main/template/ds_cattree.cpp)
 
@@ -88,8 +89,6 @@ this template is not based on the commutative law of merge function(in another w
 |  `segmentree[x]=y;`   |                 change the value on index $x$ to $y$                  | $\Theta(\log n)$ |
 | `node query(int l,int r)` |                return the value of interval $[l,r]$                 | $\Theta(\log n)$ |
 
-this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
-
 [code1(memory*3, faster)](https://github.com/amenotiomoi/template/blob/main/template/ds_seg1.cpp)
 
 ## segment tree(interval change, interval query)
@@ -98,8 +97,6 @@ this template is not based on the commutative law of merge function(in another w
 | `init(int n,typename node::info y)` | rebuild a new tree, node from $1$ to $n$, with all $y$  |   $\Theta(n)$    |
 |  `change(int l,int r,node::tag y)`  |        apply $y$ on $[l,r]$               | $\Theta(\log n)$ |
 |   `node::info query(int l,int r)`   |                return the value of interval $[l,r]$                 | $\Theta(\log n)$ |
-
-this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
 [code](https://github.com/amenotiomoi/template/blob/main/template/ds_seg2.cpp)
 
@@ -112,8 +109,6 @@ this template is not based on the commutative law of merge function(in another w
 | `splay cut(int l,int r)` | cut the interval $[l,r]$ out and build a new splay on it(This interval will be deleted from the original splay) | $\Theta(\log n)$ | 
 | `insert(splay x,int p)` | insert the splay after the index $p$(for example about insert function, if $p=0$, $x$ will be connected in begin, if $p=\|s\|$, $x$ will be connect on the end.) | $\Theta(\log n)$ |
 
-this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
-
 [code](https://github.com/amenotiomoi/template/blob/main/template/ds_splay1.cpp)
 
 ## segment tree(single point change, interval query, persistence)
@@ -124,8 +119,6 @@ this template is not based on the commutative law of merge function(in another w
 |   `Psegment1()`  | build a empty tree |   $\Theta(1)$    |
 |  `node query(int l,int r)`   |   return the value of interval $[l,r]$  | $\Theta(\log n)$ |
 | `Psegment1<node> change(int x,node y)` |    change the value on index $x$ to $y$, and return the new tree, this operation NOT change the old tree(you can still use it)  | $\Theta(\log n)$ |
-
-this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
 
 **this template will NOT release memory and it need $\Theta(\log n)$ more memory than the seg tree of the up two. You'd better make sure you know what you're doing before you use this.**
 
@@ -144,18 +137,21 @@ this template is not based on the commutative law of merge function(in another w
 |          `path diam()`           |                          find the longest path on tree                          |   $\Theta(n)$    |
 | `pair<int,int> gravity_center()` |        find the gravity center of tree(if don't have two, the pair.second is `0`)          |   $\Theta(n)$    |
 
+This data structure requires strict ordering of operations, you need to define it first, then add the correct number $(n-1)$ of edges, followed by init, and finally destruct it, otherwise it will result in RE, WA or a memory leak. The sample code is given in the comments.
+
 [code](https://github.com/amenotiomoi/template/blob/main/template/ds_lca.cpp)
 
-## static hld
+## hld
 |          function name           |                 feature                 |      Complexity       |
 | :-----------------------: | :----------------------------------: | :---------------: |
-|   `hld<node,cat_tree>`    |  build a node hld based on `cat_tree`  |    $\Theta(n)$    |
-| `setvalue(int x,node y)`  | set the $x$ node of value $y$ |    $\Theta(1)$    |
-|       `init(int x)`       |       calculate the hld based on root $x$        | $O(n\log n)$ |
-| `node query(int l,int r)` |   query the value of path $u→v$  | $O(\log n)$ （In fact, it has a linear relationship with the number of heavy chains passed on the path from $l$ to $r$, and can be analyzed as $\Theta(1)$ under some special problems） |
-| `lca_top[x]` | query the highest node index of the chain $x$ in it | $\Theta(1)$ |
+|   `hld<node,segment1> Q(int cnt)`    |  build a node hld Q based on `segmentt1`, with cnt size, all empty node  |    $\Theta(n)$    |
+|   `addedge(int u,int v)`    |  add a edge $u↔v$  |    $\Theta(1)$    |
 
-this template is not based on the commutative law of merge function(in another word, you can use this to solve [GSS1](https://vjudge.net/problem/SPOJ-GSS1)).
+| `Q[x]=y`  | set the $x$ node of value $y$ |    $\Theta(\log n)$    |
+|       `init(int x)`       |       calculate the hld based on root $x$        | $O(n\log n)$ |
+| `node query(int l,int r)` |   query the value of path $u→v$  | $O(\log^2 n)$ （Mostly it's fast looks like a $O(\log n)$） |
+
+This data structure requires strict ordering of operations, you need to define it first, then add the correct number $(n-1)$ of edges, followed by init, and finally destruct it, otherwise it will result in RE, WA or a memory leak. The sample code is given in the comments.
 
 [code](https://github.com/amenotiomoi/template/blob/main/template/ds_hld.cpp)
 
