@@ -146,7 +146,6 @@ This data structure requires strict ordering of operations, you need to define i
 | :-----------------------: | :----------------------------------: | :---------------: |
 |   `hld<node,segment1> Q(int cnt)`    |  build a node hld Q based on `segmentt1`, with cnt size, all empty node  |    $\Theta(n)$    |
 |   `addedge(int u,int v)`    |  add a edge $u↔v$  |    $\Theta(1)$    |
-
 | `Q[x]=y`  | set the $x$ node of value $y$ |    $\Theta(\log n)$    |
 |       `init(int x)`       |       calculate the hld based on root $x$        | $O(n\log n)$ |
 | `node query(int l,int r)` |   query the value of path $u→v$  | $O(\log^2 n)$ （Mostly it's fast looks like a $O(\log n)$） |
