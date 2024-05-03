@@ -11,6 +11,6 @@ class hstring {
 };
 hstring::hvalue operator +(hstring::hvalue a,hstring::hvalue b){return{a.first+b.first,((((b.second>>32ll)*hstring::pow[0][0][a.first]+(a.second>>32ll))%hstring::mod[0])<<32ll)+((b.second&4294967295ll)*hstring::pow[1][0][a.first]+(a.second&4294967295))%hstring::mod[1]};}
 vector<int> hstring::pow[2][2]={{{1},{1}},{{1},{1}}};
-const int hstring::base=abs((int)chrono::steady_clock::now().time_since_epoch().count());
+const int hstring::base=max(1000,abs((int)chrono::steady_clock::now().time_since_epoch().count()));
 const int hstring::mod[2]={2134567921,2134567907},hstring::inv[2]={hstring::power(hstring::base,mod[0]-2,mod[0]),hstring::power(hstring::base,mod[1]-2,mod[1])};
  
