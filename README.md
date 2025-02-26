@@ -139,6 +139,8 @@ In all `merge` function, it is not based on the law of exchange, For example, yo
 
 This data structure requires strict ordering of operations, you need to define it first, then add the correct number $(n-1)$ of edges, followed by init, and finally destruct it, otherwise it will result in RE, WA or a memory leak. The sample code is given in the comments.
 
+The path is based on point but not edge. 
+
 [code](https://github.com/amenotiomoi/template/blob/main/template/ds_lca.cpp)
 
 ## hld
